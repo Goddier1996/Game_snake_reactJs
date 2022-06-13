@@ -1,0 +1,513 @@
+html body{
+	background:  url(images/z22.png) ;
+  background-size: cover;
+  font-family: 'Oswald', Helvetica, sans-serif;
+}
+
+
+
+/* דף Admin */
+.navigation{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navigation table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    width: 90%;
+    table-layout: fixed;
+  }
+  
+   .title p{
+     font-size: 45px;
+     margin-top: 4%;
+     margin-bottom: 3%;
+     text-align: center;
+     margin-bottom: 8%;
+     color: #69AF23;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     font-weight: bold;
+  }
+  
+  .navigation table caption {
+    font-size: 2.0em;
+    margin: 5px;
+  
+  }
+  
+  .navigation table tr {
+    background: rgba(0, 0, 0, 0.4) !important; 
+       border: 1px solid #ddd;
+    padding: .35em;
+  }
+  
+  .navigation table th,
+  table td {
+    padding: .625em;
+    text-align: center;
+  }
+  
+  .navigation img{
+    width:90%;
+    border-radius: 20%;
+  }
+  
+  .navigation table th {
+    font-size: 15px;
+    letter-spacing: .1em; 
+    color: white;
+  }
+  
+   @media screen and (max-width: 600px) {
+    table {
+      border: 0;
+    }
+  
+    .navigation table caption {
+      font-size: 1.3em;
+    }
+    
+    .navigation table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    
+    .navigation table tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: .625em;
+    }
+    
+    .navigation table td {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: .8em;
+      text-align: right;
+    }
+    
+    .navigation table td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    .navigation table td:last-child {
+      border-bottom: 0;
+    }
+  }
+  
+  .navigation button{
+    box-sizing: border-box;
+    display:block;
+    padding: 8px 30px 10px 30px;
+    margin-top: 10px;
+    margin: 5px;
+    width: auto;
+    border: 3px solid #ffffff;
+    border-radius: 5px;
+    font-size: 12px;
+    background: #008737;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+  }
+  
+  
+
+
+
+
+/* דף Game */
+
+  .game-area {
+    position: relative;
+    margin: 50px auto;
+    width: 600px;
+    height: 600px;
+    border: 3px solid rgb(0, 0, 0);
+  }
+  
+  .snake-dot {
+    position: absolute;
+    width: 2%;
+    height: 2%;
+    background-color: #008737;
+    border: 2px solid rgb(255, 255, 255);
+    z-index: 2;
+  }
+  
+  .snake-food {
+    position: absolute;
+    width: 2%;
+    height: 2%;
+    background: red;
+    border: 1px solid #fff;
+    z-index: 1;
+  }
+  
+
+
+
+
+
+  
+/* דף ההרשמה */
+.register-heading {
+    margin-bottom: 8%;
+     color: #000000;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     font-weight: bold;
+  
+  }
+  .container{
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    margin: auto;
+    width: 800px;
+    height: 400px;
+    margin-top: 7%;
+  
+  }
+  
+  .dolly{
+    position: relative;
+    width: 300px;
+    height: 700px;
+    float: left;
+    margin-top: 25%;
+    background: url('images/register.png') no-repeat;
+  }
+  
+  .register-heading{
+    margin-top: -7%;
+    margin-bottom: 7%;
+  }
+  
+  .register{
+    width: 500px;
+    margin-top: 20px;
+    float: right;
+  }
+  
+  .register input{
+    width: 100%;
+    height: 35px;
+    
+    margin: 0;
+    font-size: 14px;
+    box-sizing: border-box;
+    border: 2px solid #bdbdbd;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0.4) !important;
+  }
+  
+  .dolly .credit{
+      position: absolute;
+      bottom: 35px;
+      right: -10px;
+      font-size: 1em;
+      text-decoration: none;
+      color: #000;
+     
+  }
+  
+  .container label {
+    display:block;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    color: #000000;
+  }
+  
+  .container p {
+      display:block;
+      margin-bottom: 5px;
+      font-size: 1.2em;
+      color: #000000;
+    }
+  
+  .input-txt{
+    box-sizing: border-box;
+    padding: .4rem .9rem;
+    width: 300px;
+    margin-bottom: 1rem;
+    border: 1px solid #3fb0da;
+    color: #444;
+    border-radius: 4px;
+    font-size: 1.3em;
+  }
+  .error .input-txt:focus{
+    border: 1px solid red;
+    animation: shake .65s;
+  }
+  
+  
+  .container button[type=submit]{
+    box-sizing: border-box;
+    display:block;
+    padding: 8px 30px 10px 30px;
+    margin-top: 10px;
+    margin: 5px;
+    width: 300px;
+    border: 1px solid #9e9e9e;
+    border-radius: 4px;
+    font-size: 1.2em;
+    background: #69AF23;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+  }
+  
+  .container button[type=reset]{
+    box-sizing: border-box;
+    display:block;
+    padding: 8px 30px 10px 30px;
+    margin-top: 10px;
+    margin: 5px;
+    width: 300px;
+    border: 1px solid #9e9e9e;
+    border-radius: 4px;
+    font-size: 1.2em;
+    background: #008737;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    }
+  
+  
+    .buttons {
+        display: flex;
+        margin-left: 5%;
+        margin-top: 5%;
+        margin-bottom: 15%;   
+    }
+  
+
+
+
+
+
+
+
+
+
+    
+
+/* דף כניסה - התחברות  */
+
+		.sign-box{		
+			position: relative;
+			display: block;
+			width: 800px;
+			margin: 40px auto;
+			background: rgba(0, 0, 0, 0.4) !important;
+			padding: 10px;
+      color: #444;
+			margin-top: 8%;
+			border-radius: 2%;
+		}
+		
+
+
+		.sign-box h1{
+			text-align: center;
+			margin-bottom: 8%;
+			font-family: 'Oswald', Helvetica, sans-serif;
+		   color: rgb(255, 255, 255);
+		   font-family: Verdana, Geneva, Tahoma, sans-serif;
+          font-size: 30px;
+		}
+
+		
+		.sign-box p{ 
+			text-align: center;
+			font-family: 'Oswald', Helvetica, sans-serif;
+            color: rgb(255, 255, 255);
+			font-size: 30px;
+			margin-bottom: 3%;
+
+		}
+        
+        .input-field p{
+		font-size: 14px;  
+		color: #ffffff;
+        }
+
+		.sign-box .title{
+			font-size: 25px;
+			text-transform: uppercase;
+			margin: 15px 0;
+			display: block;
+			font-weight: 600;
+			text-align: center;
+		}
+		.sign-box .input-field,
+		.sign-box .checkbox-field{
+			width: 300px;
+			margin: 15px auto;
+			position: relative;
+		}
+
+		.sign-box .input-field input.input{
+			width: 100%;
+			padding: 0 15px;
+			height: 45px;
+			line-height: 50px;
+			margin: 0;
+			font-size: 14px;
+			box-sizing: border-box;
+			border: 2px solid #bdbdbd;
+			outline: none;
+			color: rgb(255, 255, 255);
+			background: rgba(0, 0, 0, 0.2) !important;
+		}
+		.sign-box .input-field input.input:focus,
+		.sign-box .input-field input.input.has-value{
+			border-color: #3F51B5;
+		}
+
+
+
+
+
+
+
+		.sign-box .input-field.right{
+			text-align: right;
+		}
+		.sign-box .input-field .btn{
+			box-sizing: border-box;
+			display:block;
+			padding: 8px 30px 10px 30px;
+			margin-top: 10px;
+			margin: 5px;
+			width: 300px;
+			border: 1px solid #9e9e9e;
+			border-radius: 4px;
+			font-size: 1.2em;
+			background: #69AF23;
+			text-transform: uppercase;
+			color: rgb(255, 255, 255);
+		}
+
+
+
+
+
+
+
+.userProfile {
+
+	padding: 300px 0;
+	text-align: center;
+;}
+
+.userProfile p{
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-size: 25px;
+margin-bottom: 2%;
+}
+
+.userProfile button{
+	box-sizing: border-box;
+	padding: 8px 30px 10px 30px;
+	width: 300px;
+	border: 1px solid #9e9e9e;
+	border-radius: 4px;
+	font-size: 1.2em;
+	background: #008737;
+	text-transform: uppercase;
+	color: rgb(255, 255, 255);
+}
+
+
+
+
+
+
+
+
+
+/* דף פרופיל */
+
+
+.card-container {
+	background: rgba(0, 0, 0, 0.3) !important;
+    border-radius: 5px;
+    box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+    max-width: 100%;
+	text-align: center;
+	position: relative;
+	display: block;
+	width: 50%;
+	height: 70vh;
+	margin: 40px auto;
+	padding: 10px;
+	color: rgb(255, 255, 255);
+	margin-top: 5%;
+	border-radius: 2%;
+}
+
+
+
+.card-container .round {
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+	padding: 7px;
+	width: 200px;
+	height: 200px;
+}
+
+
+.card-container h1{
+	font-weight: bold;
+	color:#ffffff;
+	margin-bottom: 2%;
+
+}
+.buttons{
+	display: flex;
+  justify-content: center;
+  margin: 3%;
+  padding: 2%;
+}
+.buttons button{
+	box-sizing: border-box;
+	padding: 8px 30px 10px 30px;
+	width:200px;
+	border: 1px solid #9e9e9e;
+	border-radius: 4px;
+	font-size: 1.2em;
+	background: #008737;
+	text-transform: uppercase;
+  color: rgb(255, 255, 255);
+
+}
+
+
+
+
+
+.card-container h3 {
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.card-container h5 {
+    margin: 5px 0;
+	margin-bottom:1%;
+
+}
+
+.card-container p {
+    font-size: 14px;
+	line-height: 21px;
+  margin-bottom:1%;
+
+}
+  
