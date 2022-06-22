@@ -1,4 +1,4 @@
-# Welcome to game Snake - reactJs
+# Welcome to game Snake  -  reactJs
 
                                                home page :
                                                
