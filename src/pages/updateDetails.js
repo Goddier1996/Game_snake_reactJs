@@ -50,8 +50,8 @@ const UpdateDetails = (props) => {
             return false;
         }
 
-        else{
-         return true;
+        else {
+            return true;
         }
     }
 
@@ -59,50 +59,52 @@ const UpdateDetails = (props) => {
 
 
     // בדיקת שם משתמש
-    const checkUserName=()=>{
-     
-        let decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{5,60}$/;
-        if(userName.match(decimal)) 
-        { 
-        // alert('good user name')
-        return true;
+    const checkUserName = () => {
+
+        // let decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{5,60}$/;
+        let decimal = /([A-Z-a-z])/;
+
+        if (userName.match(decimal)) {
+            // alert('good user name')
+            return true;
         }
         else {
-        alert('wrong user name')
-        return false; 
-       }
+            alert('wrong user name')
+            return false;
+        }
     }
-    
+
 
 
 
     // בדיקת סיסמא
-    const checkPassword=()=>{
-  
-    let decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{5,12}$/;
-    if(password.match(decimal)) 
-    { 
-    // alert('good password')
-    return true;
+    const checkPassword = () => {
+
+        // let decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{5,12}$/;
+        let decimal = /.{5,12}/;
+
+        if (password.match(decimal)) {
+            // alert('good password')
+            return true;
+        }
+
+        else {
+            alert('wrong password')
+            return false;
+        }
     }
-    
-    else {
-    alert('wrong password')
-    return false; 
-    }
-}
 
 
 
     // אימות סיסמאות
-    const checkCorrectPassword=()=>{
+    const checkCorrectPassword = () => {
 
         if (password === confirmPassword)
-        return true;
+            return true;
 
         else {
-        alert(`הסיסמאות לא תואמות`)
-        return false;
+            alert(`הסיסמאות לא תואמות`)
+            return false;
         }
     }
 
@@ -110,43 +112,44 @@ const UpdateDetails = (props) => {
 
     //בדיקת מייל תקין 
     const checkEmail = () => {
-       
+
         let pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-          
+
         if (pattern.test(email)) {
-        // alert('good email')
-        return true;
+            // alert('good email')
+            return true;
         }
 
-        else if (!(pattern.test(email))){
-        alert('wrong email')
-        return false; 
-       }
+        else if (!(pattern.test(email))) {
+            alert('wrong email')
+            return false;
+        }
     }
-    
-    
+
+
+
+
     // בדיקת תאריך תקין
     const checkDate = () => {
 
-        if (startDate == null){
-           alert('wrong date')
-           return false;
+        if (startDate == null) {
+            alert('wrong date')
+            return false;
         }
-        else if (startDate != null){
+        else if (startDate != null) {
             return true;
         }
     }
-    
+
+
 
 
     // בדיקת רחוב-כתובת תקינה
     const checkStreet = () => {
-        if (!(Street > 'A' && Street < 'Z' || Street > 'a' && Street < 'z'))
-        {
-        return true;
+        if (!(Street > 'A' && Street < 'Z' || Street > 'a' && Street < 'z')) {
+            return true;
         }
-        else 
-        {
+        else {
             alert('wrong street');
             return false;
         }
@@ -154,15 +157,13 @@ const UpdateDetails = (props) => {
 
     // בדיקת תקינות מספר רחוב
     const checkNumStreet = () => {
-        if (NumStreet > 0 && NumStreet < 1000)
-        {
-        // alert('good street number');
-        return true;
+        if (NumStreet > 0 && NumStreet < 1000) {
+            // alert('good street number');
+            return true;
         }
-        else 
-        {
-        alert('wrong street number');
-        return false;
+        else {
+            alert('wrong street number');
+            return false;
         }
     }
 
@@ -190,14 +191,14 @@ const UpdateDetails = (props) => {
         if (checkForm() && checkUserName() && checkEmail() && checkPassword() && checkCorrectPassword() && checkDate() && checkStreet() && checkNumStreet()) {
 
             let users = JSON.parse(localStorage.getItem('users')) || [];
-            
+
             let userDetails = JSON.parse(sessionStorage.getItem('usersArray')) // קבלת משתמש ספציפי כדי לעדכן את הפרטים שלו
-            
-           
-            
-            for (let i = 0; i < users.length; i++){
-                if (users[i].name == userDetails["name"]){ // בדיקה אם השם במאגר הנתונים שווה ל-שם של המשתמש הספציפי
-                // עדכון פרטים חדשים למשתמש ספציפי
+
+
+
+            for (let i = 0; i < users.length; i++) {
+                if (users[i].name == userDetails["name"]) { // בדיקה אם השם במאגר הנתונים שווה ל-שם של המשתמש הספציפי
+                    // עדכון פרטים חדשים למשתמש ספציפי
                     users[i].userName = userName;
                     users[i].password = password;
                     users[i].confirmPassword = confirmPassword;
@@ -226,13 +227,13 @@ const UpdateDetails = (props) => {
             userDetails["profileImg"] = profileImg;
 
 
-            sessionStorage.setItem('usersArray' ,JSON.stringify(userDetails)); // כעת עודכנו במאגר פרטים חדשים
-            localStorage.setItem('users', JSON.stringify(users)); 
-             
+            sessionStorage.setItem('usersArray', JSON.stringify(userDetails)); // כעת עודכנו במאגר פרטים חדשים
+            localStorage.setItem('users', JSON.stringify(users));
 
-     
+
+
             alert(`עודכנו פרטי המשתמש!`)
-            history.push('Login'); 
+            history.push('Login');
         }
     }
 
@@ -240,43 +241,38 @@ const UpdateDetails = (props) => {
 
 
 
-    
+
 
 
     //תבנית של הרשמה                         
     return (
-      <div class="container">
+        <>
 
-      <div class="dolly"></div> 
+            <div class="register">
 
-      <div class="register">  
+                <form onSubmit={signup}>
 
-      <h1 class="register-heading">Update your details : </h1>
-    
-  <form onSubmit={signup}>
-    
-      <FormFeild input type="text" name="User name" action={setUserName} /> 
-      <FormFeild input type="password" name="Password" action={setPassword} />
-      <FormFeild input type="password" name="Confirm password" action={setConfirmPassword} />
-      <FormFeild input type="list" listId="listOfCities" data={cities} name="City" action={setCity} />
-      <FormFeild input type="text" name="First name" action={setName} />
-      <FormFeild input type="text" name="Last name" action={setLastName} />
-      <FormFeild input type="text" name="Email" action={setEmail} />
-      <FormFeild input type="date" name="Date" action={setStartDate}/>
-      <FormFeild input type="text" name="Street" action={setStreet} />
-      <FormFeild input type="number" name="Street number" action={setNumStreet} />          
-      <FormFeild input type="file" name="Profile image" targetImg={profileImg} action={uploadImage} />  
+                    <h1>Update your details : </h1>
 
-      <div class= "buttons">
-      
-      <button type="submit">submit</button>
-      <button type="reset">reset</button>
-      </div>
-  </form>
+                    <FormFeild input type="text" name="User name" action={setUserName} />
+                    <FormFeild input type="password" name="Password" action={setPassword} />
+                    <FormFeild input type="password" name="Confirm password" action={setConfirmPassword} />
+                    <FormFeild input type="list" listId="listOfCities" data={cities} name="City" action={setCity} />
+                    <FormFeild input type="text" name="First name" action={setName} />
+                    <FormFeild input type="text" name="Last name" action={setLastName} />
+                    <FormFeild input type="text" name="Email" action={setEmail} />
+                    <FormFeild input type="date" name="Date" action={setStartDate} />
+                    <FormFeild input type="text" name="Street" action={setStreet} />
+                    <FormFeild input type="number" name="Street number" action={setNumStreet} />
+                    <FormFeild input type="file" name="Profile image" targetImg={profileImg} action={uploadImage} />
 
-</div>
-</div>
-         
+                    <div class="buttons">
+                        <button type="submit">submit</button>
+                        <button type="reset">reset</button>
+                    </div>
+                </form>
+            </div>
+        </>
     )
 }
 

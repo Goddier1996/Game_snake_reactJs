@@ -3,56 +3,66 @@ import Snake from './Snake';
 import Food from "../components/Food";
 
 
+
 const getRandomCoordinates = () => { // פונקציה שמגדירה את מיקום האוכל באופן רנדומלי - הקוביה האדומה
   let min = 1;
   let max = 98;
-  let x = Math.floor((Math.random()*(max-min+1)+min)/2)*2;
-  let y =  Math.floor((Math.random()*(max-min+1)+min)/2)*2;
-  return [x,y]
+  let x = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
+  let y = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
+  return [x, y]
 }
+
+
 
 const initialState = {  // מצב התחלתי של הנחש שלנו
   food: getRandomCoordinates(),
   speed: 200,         // מהירות
   direction: 'RIGHT', // הנחש מאותחל כפונה ימינה
   snakeDots: [   // מערך התחלתי של כמות נקודות הנחש לפני שגדל
-    [0,0], // 0
-    [2,0]  // 1
+    [0, 0], // 0
+    [2, 0]  // 1
   ]
 }
+
+
+
 
 class game extends Component { // הגדרת רכיב - game
 
   state = initialState; // מגדיר לנו מצב התחלתי
 
-  componentDidMount() { 
+
+  componentDidMount() {
     setInterval(this.moveSnake, this.state.speed); // שיטה המאפשרת מרווחי זמן 
     document.onkeydown = this.onKeyDown; // אירוע מקלדת - כלומר מאפשר למשתמש לשחק ע"י המקלדת
   }
+
 
   componentDidUpdate() { // מאפשר עדכון לאחר בדיקות
     this.checkIfOutOfBorders();
     this.checkIfEat();
   }
 
+
+
   onKeyDown = (e) => { // מגדיר לנו פניות אפשריות של הנחש
-  
+
     switch (e.keyCode) { // לכל מקש כיווני יש קוד מספרי שונה לכן זה 38,39 וכן הלאה
-      case 38: 
-        this.setState({direction: 'UP'});
+      case 38:
+        this.setState({ direction: 'UP' });
         break;
       case 40:
-        this.setState({direction: 'DOWN'});
+        this.setState({ direction: 'DOWN' });
         break;
       case 37:
-        this.setState({direction: 'LEFT'});
+        this.setState({ direction: 'LEFT' });
         break;
       case 39:
-        this.setState({direction: 'RIGHT'});
+        this.setState({ direction: 'RIGHT' });
         break;
     }
   }
-  
+
   moveSnake = () => {
     let dots = [...this.state.snakeDots];  // נקודות 
     let head = dots[dots.length - 1];      // בתוך משתנה הראש נכנסות לנו הנקודות מהסוף
@@ -69,14 +79,18 @@ class game extends Component { // הגדרת רכיב - game
         break;
       case 'UP':
         head = [head[0], head[1] - 2]; // תזוזה למעלה
-        break; 
+        break;
     }
-    dots.push(head); 
+
+
+    dots.push(head);
     dots.shift();   // מאתחל את הנקודות לפי כיוון חדש
     this.setState({
       snakeDots: dots
     })
   }
+
+
 
   checkIfOutOfBorders() { // בדיקה האם הנחש יוצא מגבולות המשחק
     let head = this.state.snakeDots[this.state.snakeDots.length - 1];
@@ -84,6 +98,7 @@ class game extends Component { // הגדרת רכיב - game
       this.onGameOver(); // המשחק נגמר - הדפסת הודעה לסיום משחק
     }
   }
+
 
 
   checkIfEat() { // אם הנחש במצב אכילה אז יש הופעה רנדומלית חדשה של האוכל
@@ -98,6 +113,8 @@ class game extends Component { // הגדרת רכיב - game
     }
   }
 
+
+
   enlargeSnake() { //  אחראי על הגדלת הנחש בכל פעם כאשר הוא אוכל 
     let newSnake = [...this.state.snakeDots];
     newSnake.unshift([]) // מוסיף כל פעם אוכל כלומר נקודות לתחילת המערך - ראש הנחש
@@ -106,7 +123,10 @@ class game extends Component { // הגדרת רכיב - game
     })
   }
 
+
+
   increaseSpeed() { // הורדת מהירות הנחש כאשר הוא אוכל מפעם לפעם
+
     if (this.state.speed > 10) {
       this.setState({
         speed: this.state.speed - 10
@@ -114,19 +134,26 @@ class game extends Component { // הגדרת רכיב - game
     }
   }
 
-  onGameOver() { 
+
+
+  onGameOver() {
     alert(`Game Over. Snake length is ${this.state.snakeDots.length}`); // כאשר המשתמש מפסיד מוצגת לו הודעה מתאימה ואת אורך הנחש שלו
     this.setState(initialState) // אתחול מחדש של הנחש למצב התחלתי כי המשתמש הפסיד
   }
 
+
+
+
   render() { // מאפשר לקבל נתונים 
     return (
       <div className="game-area">
-        <Snake snakeDots={this.state.snakeDots}/>
-        <Food dot={this.state.food}/>  
+        <Snake snakeDots={this.state.snakeDots} />
+        <Food dot={this.state.food} />
       </div>
     );
   }
 }
+
+
 //  הפעלת קומפוננטה של אוכל - קובע את מיקום האוכל בכל פעם רנדומלית -Food
 export default game;
