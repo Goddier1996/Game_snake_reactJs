@@ -363,8 +363,7 @@ table td {
   align-items: center;
   width: 100%;
   padding: 0 15px;
-  height: 45px;
-  line-height: 50px;
+  line-height: 30px;
   font-size: 14px;
   box-sizing: border-box;
   border: 2px solid #bdbdbd;
@@ -431,7 +430,6 @@ table td {
 
   .sign-box .input-field input.input {
     width: 280px;
-    height: 35px;
   }
 
   .sign-box .input-field .btn {
