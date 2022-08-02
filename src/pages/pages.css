@@ -357,11 +357,14 @@ table td {
 }
 
 .sign-box .input-field input.input {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
   width: 100%;
   padding: 0 15px;
   height: 45px;
   line-height: 50px;
-  margin: 0;
   font-size: 14px;
   box-sizing: border-box;
   border: 2px solid #bdbdbd;
