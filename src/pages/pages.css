@@ -174,13 +174,11 @@ table td {
 /* דף ההרשמה */
 
 
-
 .register h1 {
   margin-top: -7%;
   margin-bottom: 7%;
   color: #000;
 }
-
 
 
 .register {
@@ -287,9 +285,8 @@ table td {
 
 
   .register {
-    margin-top: 85%;
+    margin-top: 100%;
   }
-
 
   .register button[type=reset],
   .register button[type=submit] {
@@ -380,10 +377,6 @@ table td {
 
 
 
-.sign-box .input-field.right {
-  text-align: right;
-}
-
 .sign-box .input-field .btn {
   box-sizing: border-box;
   display: block;
@@ -445,7 +438,6 @@ table td {
   .sign-box h1 {
     font-size: 20px;
   }
-
 
 }
 
