@@ -1,5 +1,9 @@
 # Welcome to game Snake - ReactJs
 
+Link Web Side - https://mini-snake-game.netlify.app
+
+## This Game play Only KeyBoard !
+
 # video :
 
 https://user-images.githubusercontent.com/59862302/179349562-0f2c2b2a-1023-41ec-95dd-577a073dea08.mp4
