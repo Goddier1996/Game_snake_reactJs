@@ -1,44 +1,18 @@
-html body {
-  background: url(images/z22.png);
-  background-size: cover;
-  object-fit: cover;
-  font-family: 'Oswald', Helvetica, sans-serif;
-}
-
-
-
 /* דף Admin */
-.navigation {
-  display: flex;
-  justify-content: center;
-}
+
 
 .navigation table {
   border: 1px solid #ccc;
   border-collapse: collapse;
-  width: 90%;
   table-layout: fixed;
+  margin-top: 3%;
 }
 
-.title p {
-  font-size: 45px;
-  margin-top: 4%;
-  margin-bottom: 3%;
-  text-align: center;
-  margin-bottom: 8%;
-  color: #69AF23;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: bold;
-}
 
-.navigation table caption {
-  font-size: 2.0em;
-  margin: 5px;
 
-}
+
 
 .navigation table tr {
-  background: rgba(0, 0, 0, 0.4) !important;
   border: 1px solid #ddd;
   padding: .35em;
 }
@@ -50,17 +24,18 @@ table td {
 }
 
 .navigation img {
-  width: 90%;
+  width: 15%;
   border-radius: 20%;
 }
 
 .navigation table th {
   font-size: 15px;
   letter-spacing: .1em;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
-/* @media screen and (max-width: 600px) { */
+
+
 @media(max-width:991px) {
 
   table {
@@ -107,9 +82,14 @@ table td {
   }
 }
 
+
+
 .navigation button {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
   box-sizing: border-box;
-  display: block;
   padding: 8px 30px 10px 30px;
   margin-top: 10px;
   margin: 5px;
@@ -129,20 +109,33 @@ table td {
 
 /* דף Game */
 
+
+.placeGame {
+  background: url("../images/gamrz.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 88vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .game-area {
   position: relative;
-  margin: 50px auto;
-  width: 600px;
-  height: 600px;
-  border: 3px solid rgb(0, 0, 0);
+  border: 5px solid rgb(255, 255, 255);
+  height: 70vh;
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.62);
 }
 
 .snake-dot {
   position: absolute;
   width: 2%;
   height: 2%;
-  background-color: #008737;
-  border: 2px solid rgb(255, 255, 255);
+  background-color: yellowgreen;
+  border: 2px solid orangered;
   z-index: 2;
 }
 
@@ -150,7 +143,7 @@ table td {
   position: absolute;
   width: 2%;
   height: 2%;
-  background: red;
+  background: green;
   border: 1px solid #fff;
   z-index: 1;
 }
@@ -162,10 +155,20 @@ table td {
     position: relative;
     margin: 50px auto;
     width: 100%;
-    height: 400px;
+    height: 70vh;
+    display: block;
+  }
+
+  .snake-dot {
+    width: 4%;
+    height: 4%;
+  }
+
+  .snake-food {
+    width: 4%;
+    height: 4%;
   }
 }
-
 
 
 
@@ -175,10 +178,15 @@ table td {
 
 
 .register h1 {
-  margin-top: -7%;
-  margin-bottom: 7%;
-  color: #000;
+  font-family: 'Raleway', sans-serif;
+  font-size: 26px;
+  border-bottom: 2px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  margin-top: 1%;
+  margin-bottom: 3%;
+  color: rgb(255, 255, 255);
 }
+
 
 
 .register {
@@ -186,9 +194,21 @@ table td {
   align-items: center;
   text-align: center;
   justify-content: center;
-  margin-top: 22%;
-  height: 400px;
+  background: url("../images/snage1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  object-fit: cover;
 }
+
+
+
+.bagroundToImage {
+  width: 100%;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.82);
+}
+
 
 .register input {
   width: 500px;
@@ -199,7 +219,7 @@ table td {
   border: 2px solid #bdbdbd;
   outline: none;
   color: rgb(255, 255, 255);
-  background: rgba(0, 0, 0, 0.4) !important;
+  background: rgba(102, 102, 102, 0.4) !important;
 }
 
 
@@ -207,8 +227,8 @@ table td {
 .register label {
   display: block;
   margin-bottom: 5px;
-  font-size: 1.2em;
-  color: #000000;
+  font-size: 17px;
+  color: #ffffff;
 }
 
 .register p {
@@ -266,14 +286,23 @@ table td {
 }
 
 
-.buttons {
+.buttonsRegister {
   display: flex;
-  margin-left: 5%;
-  margin-top: 5%;
-  margin-bottom: 15%;
+  justify-content: center;
+  margin: 3%;
 }
 
-
+.buttonsRegister button {
+  box-sizing: border-box;
+  padding: 8px 30px 10px 30px;
+  width: 200px;
+  border: 1px solid #9e9e9e;
+  border-radius: 4px;
+  font-size: 1.2em;
+  background: #008737;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+}
 
 
 
@@ -281,11 +310,6 @@ table td {
 
   .register input {
     width: 300px;
-  }
-
-
-  .register {
-    margin-top: 100%;
   }
 
   .register button[type=reset],
@@ -299,15 +323,68 @@ table td {
 
 
 
-
 /* דף כניסה - התחברות  */
+
+
+.main1 {
+  position: relative;
+}
+
+.main1 img {
+  margin-top: -8px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 868px;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+
+.content {
+  width: 100%;
+  height: 868px;
+  top: -8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  color: #ffffff;
+  font-family: 'Raleway', sans-serif;
+  font-size: 62px;
+  font-weight: 800;
+  line-height: 72px;
+  margin: 0 0 24px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: rgba(0, 0, 0, .4);
+}
+
+
+.content button {
+  font-size: 22px;
+}
+
+
+
+.DemoUserAndDoctor a {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: 600;
+  color: #232323;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+
 
 .sign-box {
   position: relative;
   display: block;
-  width: 800px;
+  width: auto;
   margin: 40px auto;
-  background: rgba(0, 0, 0, 0.4) !important;
   padding: 10px;
   color: #444;
   margin-top: 8%;
@@ -320,7 +397,7 @@ table td {
   text-align: center;
   margin-bottom: 8%;
   font-family: 'Oswald', Helvetica, sans-serif;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 30px;
 }
@@ -329,7 +406,7 @@ table td {
 .sign-box p {
   text-align: center;
   font-family: 'Oswald', Helvetica, sans-serif;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-size: 30px;
   margin-bottom: 3%;
 
@@ -337,7 +414,7 @@ table td {
 
 .input-field p {
   font-size: 14px;
-  color: #ffffff;
+  color: #000000;
 }
 
 .sign-box .title {
@@ -368,14 +445,10 @@ table td {
   box-sizing: border-box;
   border: 2px solid #bdbdbd;
   outline: none;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   background: rgba(0, 0, 0, 0.2) !important;
 }
 
-.sign-box .input-field input.input:focus,
-.sign-box .input-field input.input.has-value {
-  border-color: #3F51B5;
-}
 
 
 
@@ -385,7 +458,7 @@ table td {
   padding: 8px 30px 10px 30px;
   margin-top: 10px;
   margin: 5px;
-  width: 300px;
+  width: 290px;
   border: 1px solid #9e9e9e;
   border-radius: 4px;
   font-size: 1.2em;
@@ -395,29 +468,6 @@ table td {
 }
 
 
-
-.userProfile {
-  padding: 300px 0;
-  text-align: center;
-}
-
-.userProfile p {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 25px;
-  margin-bottom: 2%;
-}
-
-.userProfile button {
-  box-sizing: border-box;
-  padding: 8px 30px 10px 30px;
-  width: 300px;
-  border: 1px solid #9e9e9e;
-  border-radius: 4px;
-  font-size: 1.2em;
-  background: #008737;
-  text-transform: uppercase;
-  color: rgb(255, 255, 255);
-}
 
 
 
@@ -440,32 +490,32 @@ table td {
     font-size: 20px;
   }
 
-
-  .userProfile p {
-    font-size: 18px;
-  }
 }
 
 
 
-/* דף פרופיל */
 
+/* דף פרופיל */
+.cardProfile {
+  background: url("../images/gamrz.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 88vh;
+  width: 100%;
+  object-fit: cover;
+}
 
 .card-container {
-  background: rgba(0, 0, 0, 0.3) !important;
-  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.681) !important;
   box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
   max-width: 100%;
   text-align: center;
   position: relative;
   display: block;
-  width: 50%;
-  height: 70vh;
-  margin: 40px auto;
+  width: 100%;
+  height: 88vh;
   padding: 10px;
   color: rgb(255, 255, 255);
-  margin-top: 5%;
-  border-radius: 2%;
 }
 
 
@@ -483,7 +533,7 @@ table td {
   font-weight: bold;
   color: #ffffff;
   margin-bottom: 2%;
-
+  margin-top: 5%;
 }
 
 .buttons {
@@ -495,17 +545,16 @@ table td {
 
 .buttons button {
   box-sizing: border-box;
+  font-family: 'Oswald', Helvetica, sans-serif;
   padding: 8px 30px 10px 30px;
-  width: 200px;
+  width: 170px;
   border: 1px solid #9e9e9e;
   border-radius: 4px;
-  font-size: 1.2em;
+  font-size: 15px;
   background: #008737;
   text-transform: uppercase;
   color: rgb(255, 255, 255);
 }
-
-
 
 
 

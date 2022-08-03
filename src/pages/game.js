@@ -1,28 +1,39 @@
 import React, { Component } from 'react';
 import Snake from './Snake';
 import Food from "../components/Food";
+import Swal from 'sweetalert2'
+
+
 
 
 
 const getRandomCoordinates = () => { // פונקציה שמגדירה את מיקום האוכל באופן רנדומלי - הקוביה האדומה
+
   let min = 1;
   let max = 98;
   let x = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
   let y = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
   return [x, y]
+  
 }
 
 
 
+
+
 const initialState = {  // מצב התחלתי של הנחש שלנו
+
   food: getRandomCoordinates(),
+
   speed: 200,         // מהירות
   direction: 'RIGHT', // הנחש מאותחל כפונה ימינה
   snakeDots: [   // מערך התחלתי של כמות נקודות הנחש לפני שגדל
     [0, 0], // 0
     [2, 0]  // 1
   ]
+
 }
+
 
 
 
@@ -33,15 +44,20 @@ class game extends Component { // הגדרת רכיב - game
 
 
   componentDidMount() {
+
     setInterval(this.moveSnake, this.state.speed); // שיטה המאפשרת מרווחי זמן 
     document.onkeydown = this.onKeyDown; // אירוע מקלדת - כלומר מאפשר למשתמש לשחק ע"י המקלדת
+
   }
 
 
   componentDidUpdate() { // מאפשר עדכון לאחר בדיקות
+
     this.checkIfOutOfBorders();
     this.checkIfEat();
+
   }
+
 
 
 
@@ -63,7 +79,11 @@ class game extends Component { // הגדרת רכיב - game
     }
   }
 
+
+
+
   moveSnake = () => {
+
     let dots = [...this.state.snakeDots];  // נקודות 
     let head = dots[dots.length - 1];      // בתוך משתנה הראש נכנסות לנו הנקודות מהסוף
 
@@ -85,23 +105,31 @@ class game extends Component { // הגדרת רכיב - game
 
     dots.push(head);
     dots.shift();   // מאתחל את הנקודות לפי כיוון חדש
+
     this.setState({
       snakeDots: dots
     })
+
   }
+
 
 
 
   checkIfOutOfBorders() { // בדיקה האם הנחש יוצא מגבולות המשחק
+
     let head = this.state.snakeDots[this.state.snakeDots.length - 1];
+
     if (head[0] >= 100 || head[1] >= 100 || head[0] < 0 || head[1] < 0) { // בדיקה בכל הצירים - כמה הנחש יכול לפנות במרחב
       this.onGameOver(); // המשחק נגמר - הדפסת הודעה לסיום משחק
     }
+
   }
 
 
 
+
   checkIfEat() { // אם הנחש במצב אכילה אז יש הופעה רנדומלית חדשה של האוכל
+
     let head = this.state.snakeDots[this.state.snakeDots.length - 1];
     let food = this.state.food;
     if (head[0] == food[0] && head[1] == food[1]) {
@@ -116,11 +144,15 @@ class game extends Component { // הגדרת רכיב - game
 
 
   enlargeSnake() { //  אחראי על הגדלת הנחש בכל פעם כאשר הוא אוכל 
+
     let newSnake = [...this.state.snakeDots];
+
     newSnake.unshift([]) // מוסיף כל פעם אוכל כלומר נקודות לתחילת המערך - ראש הנחש
+
     this.setState({
       snakeDots: newSnake
     })
+
   }
 
 
@@ -128,17 +160,26 @@ class game extends Component { // הגדרת רכיב - game
   increaseSpeed() { // הורדת מהירות הנחש כאשר הוא אוכל מפעם לפעם
 
     if (this.state.speed > 10) {
+
       this.setState({
         speed: this.state.speed - 10
       })
     }
+
   }
 
 
 
   onGameOver() {
-    alert(`Game Over. Snake length is ${this.state.snakeDots.length}`); // כאשר המשתמש מפסיד מוצגת לו הודעה מתאימה ואת אורך הנחש שלו
+
+    Swal.fire({
+      icon: 'warning',
+      title: 'oops..',
+      text: `Game Over. Snake length is ${this.state.snakeDots.length}`,
+    })
+
     this.setState(initialState) // אתחול מחדש של הנחש למצב התחלתי כי המשתמש הפסיד
+
   }
 
 
@@ -146,12 +187,17 @@ class game extends Component { // הגדרת רכיב - game
 
   render() { // מאפשר לקבל נתונים 
     return (
-      <div className="game-area">
-        <Snake snakeDots={this.state.snakeDots} />
-        <Food dot={this.state.food} />
+
+      <div className='placeGame'>
+        <div className="game-area">
+          <Snake snakeDots={this.state.snakeDots} />
+          <Food dot={this.state.food} />
+        </div>
       </div>
     );
   }
+
+
 }
 
 

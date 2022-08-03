@@ -1,7 +1,9 @@
 import React from 'react';
 
 export default (props) => {
+
   return (
+    
     <div>
       {props.snakeDots.map((dot) => { 
         const style = {

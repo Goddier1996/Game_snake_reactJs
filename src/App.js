@@ -10,9 +10,11 @@ import game from "./pages/game";
 function App() { // אחראי על ההעברה בין המסכים
 
   return (
+
     <BrowserRouter>
       <Menu />
       <Switch>
+
         <Route path="/" exact component={Login} />
         <Route path="/Login" exact component={Login} />
         <Route path="/Register" exact component={Register} />

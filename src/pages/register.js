@@ -1,36 +1,28 @@
-
+import React from 'react'
 import { useState, useEffect } from "react";
 import FormFeild from "../components/formField";
 import { useHistory } from 'react-router-dom';
 import './pages.css';
+import Swal from 'sweetalert2'
 
 
 
-const Register = (props) => {
+const Register = () => {
+
     // הגדרת משתנים עבור טופס הרשמה
     const history = useHistory()
     const [userName, setUserName] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
     const [city, setCity] = useState('')
-    const [name, setName] = useState('')
-    const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [startDate, setStartDate] = useState('');
-    const [Street, setStreet] = useState('')
-    const [NumStreet, setNumStreet] = useState('')
     const [profileImg, setProfileImg] = useState('')
 
 
 
     //משתנה הצגת ערים
     const [cities, setCities] = useState([])
-
-    //udate the list of cities once the page load
-    useEffect(() => {
-        getCitiesFromJson();
-    }, []);
-
 
 
 
@@ -48,7 +40,13 @@ const Register = (props) => {
     const checkForm = () => {
 
         if (userName === '' || password === '' || confirmPassword === '' || city === '') {
-            alert('יש למלא את כל השדות')
+
+            Swal.fire({
+                icon: 'warning',
+                title: 'oops..',
+                text: 'All fields must be filled in.',
+            })
+
             return false;
         }
 
@@ -64,12 +62,19 @@ const Register = (props) => {
     const checkUserName = () => {
 
         let decimal = /([A-Z-a-z])/;
+
         if (userName.match(decimal)) {
-            // alert('good user name')
             return true;
         }
+
         else {
-            alert('wrong user name')
+
+            Swal.fire({
+                icon: 'warning',
+                title: 'oops..',
+                text: 'wrong user name - you need big char and letter char',
+            })
+
             return false;
         }
     }
@@ -84,12 +89,17 @@ const Register = (props) => {
         let decimal = /.{5,12}/;
 
         if (password.match(decimal)) {
-            // alert('good password')
             return true;
         }
 
         else {
-            alert('wrong password')
+
+            Swal.fire({
+                icon: 'warning',
+                title: 'oops..',
+                text: 'wrong password - you need 5-12 numbers',
+            })
+
             return false;
         }
     }
@@ -103,7 +113,13 @@ const Register = (props) => {
             return true;
 
         else {
-            alert(`הסיסמאות לא תואמות`)
+
+            Swal.fire({
+                icon: 'warning',
+                title: 'oops..',
+                text: 'The passwords do not match',
+            })
+
             return false;
         }
     }
@@ -116,12 +132,17 @@ const Register = (props) => {
         let pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
 
         if (pattern.test(email)) {
-            // alert('good email')
             return true;
         }
 
         else if (!(pattern.test(email))) {
-            alert('wrong email')
+
+            Swal.fire({
+                icon: 'warning',
+                title: 'oops..',
+                text: 'wrong email',
+            })
+
             return false;
         }
     }
@@ -133,7 +154,13 @@ const Register = (props) => {
     const checkDate = () => {
 
         if (startDate == null) {
-            alert('wrong date')
+
+            Swal.fire({
+                icon: 'warning',
+                title: 'oops..',
+                text: 'wrong date',
+            })
+
             return false;
         }
         else if (startDate != null) {
@@ -142,32 +169,6 @@ const Register = (props) => {
     }
 
 
-
-    // בדיקת רחוב-כתובת תקינה
-    const checkStreet = () => {
-        if ((Street > 'A' && Street < 'Z' || Street > 'a' && Street < 'z')) {
-            return true;
-        }
-        else {
-            alert('wrong street');
-            return false;
-        }
-    }
-
-
-
-
-    // בדיקת תקינות מספר רחוב
-    const checkNumStreet = () => {
-        if (NumStreet > 0 && NumStreet < 1000) {
-            // alert('good street number');
-            return true;
-        }
-        else {
-            alert('wrong street number');
-            return false;
-        }
-    }
 
 
 
@@ -192,24 +193,35 @@ const Register = (props) => {
 
         event.preventDefault(); //ביטול ניקוי הטופס באופן דיפולטיבי
 
-        if (checkForm() && checkUserName() && checkEmail() && checkPassword() && checkCorrectPassword() && checkDate() && checkStreet() && checkNumStreet()) {
+        if (checkForm() && checkUserName() && checkEmail() && checkPassword() && checkCorrectPassword() && checkDate()) {
 
             let users = JSON.parse(localStorage.getItem('users')) || []; // משתנה שמוגדר כמערך ואליו נכנסים כל הנרשמים החדשים
 
-            let user = { userName, password, city, name, lastName, email, startDate, Street, NumStreet, profileImg }
+            let user = { userName, password, city, email, startDate, profileImg }
 
             users.push(user);
 
             localStorage.setItem('users', JSON.stringify(users)) //הכנסת משתנה כדי שישמר במאגר של נתונים
 
-            alert(`נרשמת בהצלחה!`)
+            Swal.fire({
+                icon: 'success',
+                title: 'successfully',
+                text: 'You have successfully registered to the site',
+            })
+
             history.push('Login'); // פקודה שמעבירה אותנו לדף ספציפי שאליו צריך לעבור - במקרה זה מעבר מהרשמה להתחברות
         }
     }
 
 
 
+    //udate the list of cities once the page load
+    useEffect(() => {
+        getCitiesFromJson();
+    }, []);
 
+
+    
 
     //תבנית של הרשמה                         
     return (
@@ -217,23 +229,18 @@ const Register = (props) => {
 
             <div class="register">
 
-                <form onSubmit={signup}>
-                    <h1 >Register : </h1>
+                <form className="bagroundToImage" onSubmit={signup} >
+                    <h1>Create New Account : </h1>
 
                     <FormFeild input type="text" name="User name" action={setUserName} />
                     <FormFeild input type="password" name="Password" action={setPassword} />
                     <FormFeild input type="password" name="Confirm password" action={setConfirmPassword} />
                     <FormFeild input type="list" listId="listOfCities" data={cities} name="City" action={setCity} />
-                    <FormFeild input type="text" name="First name" action={setName} />
-                    <FormFeild input type="text" name="Last name" action={setLastName} />
                     <FormFeild input type="text" name="Email" action={setEmail} />
                     <FormFeild input type="date" name="Date" action={setStartDate} />
-                    <FormFeild input type="text" name="Street" action={setStreet} />
-                    <FormFeild input type="number" name="Street number" action={setNumStreet} />
                     <FormFeild input type="file" name="Profile image" targetImg={profileImg} action={uploadImage} />
 
-                    <div class="buttons">
-
+                    <div class="buttonsRegister">
                         <button type="submit">submit</button>
                         <button type="reset">reset</button>
                     </div>

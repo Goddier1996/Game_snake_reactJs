@@ -1,5 +1,6 @@
 import { useHistory } from 'react-router-dom';
 import './pages.css';
+import React from 'react'
 
 
 
@@ -15,11 +16,13 @@ const Profile = () => {
 
 
     // כפתור התנתק המנקה את זכרון המאגר הראשי ומחזיר לדף ההתחברות --> (Session Storage)
-    const clearAll = (event) => {
-        event.preventDefault(); //ביטול ניקוי הטופס באופן דיפולטיבי
+    const clearAll = () => {
+
         sessionStorage.clear();
 
         history.push('Login');
+        window.location.reload(false);
+
     }
 
 
@@ -40,59 +43,51 @@ const Profile = () => {
     }
 
 
-    //  כאשר המשתמש לא התחבר - בדף פרופיל יוצג לו כפתור חזרה לדף ההתחברות
-    const BackToLogin = (event) => {
-        event.preventDefault();
-        history.push('Login');
-    }
 
 
 
 
-
-    // ברגע שאין משתמש שמחובר למערכת תוצג לו הודעה מתאימה וכפתור חזרה לדף ההתחברות
     if (userProfile == null) {
+
         return (
             <div class="userProfile">
                 <p>You must be logged in to view this profile</p>
-                <form onSubmit={BackToLogin}>
-                    <button type="BackToLogin">Back to login</button>
-                </form>
             </div>
         )
     }
 
 
 
-    else {
+
+    if (userProfile != null) {
+
         return (
 
-
-            // תבנית דף הפרופיל למשתמש ספציפי
-            <div class="card-container">
-                <h1>Profile User</h1>
-                <img
-                    class="round"
-                    src={userProfile.profileImg}
-                    alt="user"
-                />
-                <h3>Hi {userProfile.name}</h3>
-                <h5>User Name : {userProfile.userName}</h5>
-                <p>Address : {userProfile.Street},{userProfile.city}</p>
-                <p>Email :  {userProfile.email}</p>
-                <p>Birthday : {userProfile.startDate}</p>
+            <div className='cardProfile'>
+                <div class="card-container">
+                    <h1>Profile User</h1>
+                    <img
+                        class="round"
+                        src={userProfile.profileImg}
+                        alt="user"
+                    />
+                    <h3>Hi {userProfile.name}</h3>
+                    <h5>User Name : {userProfile.userName}</h5>
+                    <p>Email :  {userProfile.email}</p>
+                    <p>Birthday : {userProfile.startDate}</p>
 
 
-                <div class="buttons">
-                    <form onSubmit={clearAll}>
-                        <button type="submit">התנתק</button>
-                    </form>
-                    <form onSubmit={ToTheGame}>
-                        <button type="submit">למשחק</button>
-                    </form>
-                    <form onSubmit={UpdateDetails}>
-                        <button type="submit">עדכון הפרטים</button>
-                    </form>
+                    <div class="buttons">
+                        <form onSubmit={clearAll}>
+                            <button type="submit">Log Out</button>
+                        </form>
+                        <form onSubmit={ToTheGame}>
+                            <button type="submit">Go Play</button>
+                        </form>
+                        <form onSubmit={UpdateDetails}>
+                            <button type="submit">Update User</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         )
