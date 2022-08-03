@@ -1,6 +1,7 @@
 import { useHistory } from 'react-router-dom';
 import './pages.css';
 import React from 'react'
+import Swal from 'sweetalert2'
 
 
 
@@ -28,10 +29,15 @@ const Profile = () => {
 
 
     // לחיצה על הכפתור ומעבר למשחק
-    const ToTheGame = (event) => {
-        event.preventDefault();
+    const ToTheGame = () => {
+
+        Swal.fire({
+            title: 'This game can only be played with keys (keyboard)!',
+            icon: 'warning',
+        })
 
         history.push('game');
+
     }
 
 
