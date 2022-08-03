@@ -42,16 +42,21 @@ const Login = () => {
         }
 
 
-        let usersArray = JSON.parse(localStorage.getItem('users')); // קבלת המשתמשים ממאגר הנתונים והשמתם בתוך משתנה
 
-        for (let i = 0; i < usersArray.length; i++) // מעבר על כמות המשתמשים 
-        {
-            if (usersArray[i].userName == userName1 && usersArray[i].password == password1) { // בדיקה אם השם משתמש והסיסמא שהמשתמש הזין, זהים לנתונים שקבלנו ממאגר הנתונים
-                sessionStorage.setItem('usersArray', JSON.stringify(usersArray[i])); // שמירת אובייקט המשתמש בתוך המאגר -> Session Storage 
-                history.push('Profile'); // לאחר התחברות המשתמש יועבר לדף הפרופיל
-                return;
+        if (userName1 != '' || password1 != '') {
+
+            let usersArray = JSON.parse(localStorage.getItem('users')); // קבלת המשתמשים ממאגר הנתונים והשמתם בתוך משתנה
+
+            for (let i = 0; i < usersArray.length; i++) // מעבר על כמות המשתמשים 
+            {
+                if (usersArray[i].userName == userName1 && usersArray[i].password == password1) { // בדיקה אם השם משתמש והסיסמא שהמשתמש הזין, זהים לנתונים שקבלנו ממאגר הנתונים
+                    sessionStorage.setItem('usersArray', JSON.stringify(usersArray[i])); // שמירת אובייקט המשתמש בתוך המאגר -> Session Storage 
+                    history.push('Profile'); // לאחר התחברות המשתמש יועבר לדף הפרופיל
+                    return;
+                }
             }
         }
+
 
 
 
@@ -67,9 +72,11 @@ const Login = () => {
         }
 
 
+
         else { // אם אין משתמש כזה במאגר הנתונים אז מציג הודעה מתאימה
             alert('Login unsucces, please try again');
         }
+
     }
 
 
