@@ -3,26 +3,36 @@
 Link Web Side - https://mini-snake-game.netlify.app
 
 This Game play Only KeyBoard !
-
+ 
 # video :
 
-https://user-images.githubusercontent.com/59862302/179349562-0f2c2b2a-1023-41ec-95dd-577a073dea08.mp4
+https://user-images.githubusercontent.com/59862302/182615231-6056e270-cfde-4727-b0a4-d96bd10a93bf.mp4
 
 # home page :
-                                               
-![1](https://user-images.githubusercontent.com/59862302/174876020-ccbcce75-f75d-458d-a196-fac87aca538a.jpg)
-                                            
+
+![home](https://user-images.githubusercontent.com/59862302/182630467-27e3914b-c825-44b1-92f1-336beb4aa3bd.jpg)
+                                          
+                                           
 # register page :
                                                
-![2](https://user-images.githubusercontent.com/59862302/174876079-9770a137-5adc-452e-92b9-2bb11ac642e7.jpg)
+![reg](https://user-images.githubusercontent.com/59862302/182630571-e09975f5-87e4-4fc0-8fab-d98942bb12ab.jpg)
+
+# login :
+
+![start](https://user-images.githubusercontent.com/59862302/182630646-b684e728-962c-48d4-872b-c9af3e198091.jpg)
 
 # profile page :
 
-![3](https://user-images.githubusercontent.com/59862302/174876213-f6866b4e-0efb-4702-a1de-41e5a952f86e.jpg)
+![prof](https://user-images.githubusercontent.com/59862302/182630692-9525f70a-b995-4dde-a72b-c7e6a18e2d2f.jpg)
+
+# update user :
+
+![up](https://user-images.githubusercontent.com/59862302/182630870-e9881938-e2b5-4541-a830-f0a313264ac6.jpg)
+
 
 # game page :
 
-![4](https://user-images.githubusercontent.com/59862302/174876275-35db0758-2651-4f69-802b-096b079e7b5e.jpg)
+![game](https://user-images.githubusercontent.com/59862302/182630985-21699674-6379-4255-8c36-58b780b7f34e.jpg)
 
 
                                  
