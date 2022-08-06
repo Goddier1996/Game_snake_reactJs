@@ -71,7 +71,6 @@ const Profile = () => {
 
             <div className='cardProfile'>
 
-
                 <div class="cardStyle">
 
                     <div class="col-md-4">
@@ -85,12 +84,16 @@ const Profile = () => {
                             <div class="text-center mt-3">
                                 <h5 class="mt-2 mb-0">Hello {userProfile.userName}</h5>
 
+                                <br />
+
                                 <div class="px-4 mt-1">
+
                                     <p class="fonts">Email - {userProfile.email} </p>
                                     <p class="fonts">Birthday - {userProfile.startDate} </p>
 
                                 </div>
 
+                                <br />
 
                                 <div class="buttons">
 
