@@ -6,7 +6,8 @@ This Game play Only KeyBoard !
  
 # video :
 
-https://user-images.githubusercontent.com/59862302/182615231-6056e270-cfde-4727-b0a4-d96bd10a93bf.mp4
+https://user-images.githubusercontent.com/59862302/183255613-9dff1b59-1ae8-4442-8cf1-4b77bbfc4926.mp4
+
 
 # home page :
 
@@ -15,24 +16,21 @@ https://user-images.githubusercontent.com/59862302/182615231-6056e270-cfde-4727-
                                            
 # register page :
                                                
-![reg](https://user-images.githubusercontent.com/59862302/182630571-e09975f5-87e4-4fc0-8fab-d98942bb12ab.jpg)
+![1](https://user-images.githubusercontent.com/59862302/183255492-b1624b7c-ea79-4244-9fbf-10a98b855c3e.jpg)
 
 # login :
 
-![start](https://user-images.githubusercontent.com/59862302/182630646-b684e728-962c-48d4-872b-c9af3e198091.jpg)
+![2](https://user-images.githubusercontent.com/59862302/183255489-59605b58-3e2a-442d-9c4b-2f6bfd2f695b.jpg)
+
 
 # profile page :
 
-![prof](https://user-images.githubusercontent.com/59862302/182630692-9525f70a-b995-4dde-a72b-c7e6a18e2d2f.jpg)
-
-# update user :
-
-![up](https://user-images.githubusercontent.com/59862302/182630870-e9881938-e2b5-4541-a830-f0a313264ac6.jpg)
+![3](https://user-images.githubusercontent.com/59862302/183255482-6b88928f-a8e7-4fc1-8da0-137722154bc8.jpg)
 
 
 # game page :
 
-![game](https://user-images.githubusercontent.com/59862302/182630985-21699674-6379-4255-8c36-58b780b7f34e.jpg)
+![4](https://user-images.githubusercontent.com/59862302/183255478-99079b05-9513-4d40-9949-3335eaec31eb.jpg)
 
 
                                  
