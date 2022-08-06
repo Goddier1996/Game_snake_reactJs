@@ -221,7 +221,7 @@ const Register = () => {
     }, []);
 
 
-    
+
 
     //תבנית של הרשמה                         
     return (
@@ -241,8 +241,8 @@ const Register = () => {
                     <FormFeild input type="file" name="Profile image" targetImg={profileImg} action={uploadImage} />
 
                     <div class="buttonsRegister">
-                        <button type="submit">submit</button>
-                        <button type="reset">reset</button>
+                        <button type="submit" class="btn btn-success" >submit</button>
+                        <button type="reset" class="btn btn-danger">reset</button>
                     </div>
                 </form>
 

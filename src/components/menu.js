@@ -27,11 +27,11 @@ const Menu = () => {
             <Navbar.Collapse id="responsive-navbar-nav">
 
               <Nav className="me-auto">
-                <Nav.Link style={{ color: "#00000094", fontWeight: "600", fontSize: "17px" }} href="/">Home</Nav.Link>
+                <Nav.Link style={{ color: "#00000094", fontSize: "17px", fontFamily: "cursive" }} href="/">Home</Nav.Link>
               </Nav>
 
               <Navbar.Collapse className="justify-content-end link">
-                <Nav.Link style={{ color: "#00000099", fontSize: "17px", fontWeight: "500" }} href="/Profile">Hello {userProfile.userName} Let`s Play (Profile)</Nav.Link>
+                <Nav.Link href="/Profile">Hello {userProfile.userName} Let`s Play (Profile)</Nav.Link>
               </Navbar.Collapse>
 
             </Navbar.Collapse>
@@ -58,7 +58,7 @@ const Menu = () => {
             <Navbar.Collapse id="responsive-navbar-nav">
 
               <Nav className="me-auto">
-                <Nav.Link style={{ color: "#00000094", fontWeight: "600", fontSize: "17px" }} href="/">Home</Nav.Link>
+                <Nav.Link style={{ color: "#00000094", fontSize: "17px", fontFamily: "cursive" }} href="/">Home</Nav.Link>
               </Nav>
 
               <Navbar.Collapse className="justify-content-end link">

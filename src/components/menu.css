@@ -1,8 +1,3 @@
-.link a {
-  color: white;
-  text-decoration: none;
-}
-
 
 .menu {
   background: rgb(245, 245, 245);
@@ -10,9 +5,9 @@
 
 .menu .link a {
   color: #00000094;
-  font-weight: 600;
   text-decoration: none;
   font-size: 17px;
+  font-family: cursive;
 }
 
 .menu img {
@@ -20,16 +15,3 @@
 }
 
 
-.imgPrf {
-  margin-right: 3%;
-  text-align: center;
-  align-items: center;
-}
-
-.imgPrf button {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 500;
-  border-radius: 10% / 50%;
-  font-size: 14px;
-  border: none;
-}
