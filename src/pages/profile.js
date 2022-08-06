@@ -70,29 +70,37 @@ const Profile = () => {
         return (
 
             <div className='cardProfile'>
-                <div class="card-container">
-                    <h1>Profile User</h1>
-                    <img
-                        class="round"
-                        src={userProfile.profileImg}
-                        alt="user"
-                    />
-                    <h3>Hi {userProfile.name}</h3>
-                    <h5>User Name : {userProfile.userName}</h5>
-                    <p>Email :  {userProfile.email}</p>
-                    <p>Birthday : {userProfile.startDate}</p>
 
 
-                    <div class="buttons">
-                        <form onSubmit={clearAll}>
-                            <button type="submit">Log Out</button>
-                        </form>
-                        <form onSubmit={ToTheGame}>
-                            <button type="submit">Go Play</button>
-                        </form>
-                        <form onSubmit={UpdateDetails}>
-                            <button type="submit">Update User</button>
-                        </form>
+                <div class="cardStyle">
+
+                    <div class="col-md-4">
+
+                        <div class="CardUser p-3 py-4">
+
+                            <div class="text-center">
+                                <img src={userProfile.profileImg} width="100" class="rounded-circle" />
+                            </div>
+
+                            <div class="text-center mt-3">
+                                <h5 class="mt-2 mb-0">Hello {userProfile.userName}</h5>
+
+                                <div class="px-4 mt-1">
+                                    <p class="fonts">Email - {userProfile.email} </p>
+                                    <p class="fonts">Birthday - {userProfile.startDate} </p>
+
+                                </div>
+
+
+                                <div class="buttons">
+
+                                    <button class="btn btn-success px-4" onClick={ToTheGame}>Go Play</button>
+                                    <button class="btn btn-warning px-4 ms-3" onClick={UpdateDetails}>Update User</button>
+                                    <button class="btn btn-danger px-4 ms-3" onClick={clearAll}>Log Out</button>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

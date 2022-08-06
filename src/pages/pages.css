@@ -493,103 +493,94 @@ table td {
 
 
 /* דף פרופיל */
+
 .cardProfile {
   background: url("../images/gamrz.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 88vh;
+  height: 868px;
   width: 100%;
   object-fit: cover;
 }
 
-.card-container {
+.cardStyle{
+  height: 868px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: rgba(0, 0, 0, .4);
+}
+
+
+.CardUser {
   background: rgba(0, 0, 0, 0.681) !important;
   box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
-  max-width: 100%;
   text-align: center;
   position: relative;
-  display: block;
-  width: 100%;
-  height: 88vh;
-  padding: 10px;
   color: rgb(255, 255, 255);
+  height: auto;
 }
 
 
 
-.card-container .round {
-  border: 1px solid #ffffff;
-  border-radius: 50%;
-  padding: 7px;
-  width: 200px;
-  height: 200px;
+
+
+.card:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #E1BEE7;
+  transform: scaleY(1);
+  transition: all 0.5s;
+  transform-origin: bottom
 }
 
 
-.card-container h1 {
-  font-weight: bold;
-  color: #ffffff;
-  margin-bottom: 2%;
-  margin-top: 5%;
+.card:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #8E24AA;
+  transform: scaleY(0);
+  transition: all 0.5s;
+  transform-origin: bottom
 }
+
+.card:hover::after {
+  transform: scaleY(1);
+}
+
+
+.fonts {
+  font-size: 14px;
+}
+
+.social-list {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  padding: 0;
+}
+
+.social-list li {
+  padding: 10px;
+  color: #8E24AA;
+  font-size: 19px;
+}
+
 
 .buttons {
   display: flex;
   justify-content: center;
-  margin: 3%;
-  padding: 2%;
-}
-
-.buttons button {
-  box-sizing: border-box;
-  font-family: 'Oswald', Helvetica, sans-serif;
-  padding: 8px 30px 10px 30px;
-  width: 170px;
-  border: 1px solid #9e9e9e;
-  border-radius: 4px;
-  font-size: 15px;
-  background: #008737;
-  text-transform: uppercase;
-  color: rgb(255, 255, 255);
-}
-
-
-
-.card-container h3 {
-  margin: 10px 0;
-  font-size: 20px;
-}
-
-.card-container h5 {
-  margin: 5px 0;
-  margin-bottom: 1%;
-
-}
-
-.card-container p {
-  font-size: 14px;
-  line-height: 21px;
-  margin-bottom: 1%;
-
-}
-
-
-@media(max-width:991px) {
-
-  .buttons button {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 0;
-    width: 80px;
-    height: 40px;
-    border: 1px solid #9e9e9e;
-    border-radius: 4px;
-    font-size: 14px;
-    background: #008737;
-    text-transform: uppercase;
-    color: rgb(255, 255, 255);
-  }
+  align-items: center;
+  text-align: center;
 }
