@@ -518,7 +518,7 @@ table td {
 
 
 
-/* @media(max-width:991px) {
+@media(max-width:991px) {
   .game-area {
     position: relative;
     margin: 50px auto;
@@ -536,4 +536,4 @@ table td {
     width: 4%;
     height: 4%;
   }
-} */
+}
