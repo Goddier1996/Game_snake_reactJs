@@ -14,7 +14,7 @@ const getRandomCoordinates = () => { // פונקציה שמגדירה את מי�
   let x = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
   let y = Math.floor((Math.random() * (max - min + 1) + min) / 2) * 2;
   return [x, y]
-  
+
 }
 
 

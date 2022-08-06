@@ -27,7 +27,7 @@ const Menu = () => {
             <Navbar.Collapse id="responsive-navbar-nav">
 
               <Nav className="me-auto">
-                <Nav.Link style={{ color: "#00000094", fontSize: "17px", fontFamily: "cursive" }} href="/">Home</Nav.Link>
+                <Nav.Link style={{ color: "#00000094", fontSize: "17px", fontWeight: "500" }} href="/">Home</Nav.Link>
               </Nav>
 
               <Navbar.Collapse className="justify-content-end link">
@@ -58,7 +58,7 @@ const Menu = () => {
             <Navbar.Collapse id="responsive-navbar-nav">
 
               <Nav className="me-auto">
-                <Nav.Link style={{ color: "#00000094", fontSize: "17px", fontFamily: "cursive" }} href="/">Home</Nav.Link>
+                <Nav.Link style={{ color: "#00000094", fontSize: "17px", fontWeight: "500" }} href="/">Home</Nav.Link>
               </Nav>
 
               <Navbar.Collapse className="justify-content-end link">

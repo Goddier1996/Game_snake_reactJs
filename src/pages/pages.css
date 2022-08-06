@@ -26,7 +26,6 @@
   align-items: center;
   position: absolute;
   color: #ffffff;
-  font-family: 'Raleway', sans-serif;
   font-size: 62px;
   font-weight: 800;
   line-height: 72px;
@@ -42,7 +41,6 @@
 }
 
 
-
 .DemoUserAndDoctor a {
   display: flex;
   justify-content: center;
@@ -51,7 +49,6 @@
   cursor: pointer;
   font-size: 15px;
 }
-
 
 
 .sign-box {
@@ -63,7 +60,7 @@
   color: #444;
   margin-top: 8%;
   border-radius: 2%;
-  font-family: cursive;
+  font-weight: 500;
 }
 
 
@@ -156,10 +153,7 @@
   .sign-box h1 {
     font-size: 20px;
   }
-
 }
-
-
 
 
 
@@ -233,14 +227,13 @@
 
 .fonts {
   font-size: 14px;
-  font-family: cursive;
+  font-weight: 500;
   color: rgba(255, 255, 255, 0.82);
 }
 
 .CardUser h5 {
   color: rgba(255, 255, 255, 0.894);
-  font-family: cursive;
-
+  font-weight: 500;
 }
 
 
@@ -249,12 +242,8 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-family: cursive;
+  font-weight: 500;
 }
-
-
-
-
 
 
 
@@ -377,7 +366,7 @@ table td {
 
 
 .register h1 {
-  font-family: cursive;
+  font-weight: 500;
   font-size: 26px;
   border-bottom: 2px solid rgb(255, 255, 255);
   border-radius: 50%;
@@ -410,7 +399,7 @@ table td {
 
 
 .register input {
-  font-family: cursive;
+  font-weight: 500;
   width: 500px;
   height: auto;
   margin: 10px;
@@ -429,7 +418,7 @@ table td {
   margin-bottom: 5px;
   font-size: 16px;
   color: #ffffff;
-  font-family: cursive;
+  font-weight: 500;
 }
 
 
@@ -457,7 +446,7 @@ table td {
   text-transform: uppercase;
   color: rgb(255, 255, 255);
   font-size: 16px;
-  font-family: cursive;
+  font-weight: 500;
 }
 
 
