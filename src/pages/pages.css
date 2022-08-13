@@ -9,7 +9,8 @@
   margin-top: -8px;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 868px;
+  height: calc(85vh - 10px);
+
   width: 100%;
   object-fit: cover;
 }
@@ -17,8 +18,9 @@
 
 
 .content {
+  height: calc(85vh - 10px);
+
   width: 100%;
-  height: 868px;
   top: -8px;
   display: flex;
   flex-direction: column;
@@ -37,7 +39,7 @@
 
 
 .content button {
-  font-size: 22px;
+  font-size: 19px;
 }
 
 
@@ -49,6 +51,7 @@
   cursor: pointer;
   font-size: 15px;
 }
+
 
 
 .sign-box {
@@ -165,13 +168,13 @@
   background: url("../images/gamrz.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 868px;
-  width: 100%;
+  height: calc(82vh - 7px);
+    width: 100%;
   object-fit: cover;
 }
 
 .cardStyle {
-  height: 868px;
+  height: calc(82vh - 7px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -246,7 +249,9 @@
 }
 
 
-
+.buttons button{
+  font-size: 14px;
+}
 
 
 
