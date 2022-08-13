@@ -10,7 +10,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   height: calc(85vh - 10px);
-
   width: 100%;
   object-fit: cover;
 }
@@ -19,7 +18,6 @@
 
 .content {
   height: calc(85vh - 10px);
-
   width: 100%;
   top: -8px;
   display: flex;
@@ -169,7 +167,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   height: calc(82vh - 7px);
-    width: 100%;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -249,7 +247,7 @@
 }
 
 
-.buttons button{
+.buttons button {
   font-size: 14px;
 }
 
@@ -475,7 +473,7 @@ table td {
   background: url("../images/gamrz.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 88vh;
+  height: calc(82vh - 7px);
   width: 100%;
   display: flex;
   justify-content: center;
