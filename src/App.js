@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Register from "./pages/register";
 import Admin from "./pages/admin";
 import Menu from "./components/menu";
+import Fotter from "./components/fotter";
 import Login from "./pages/login";
 import Profile from "./pages/profile";
 import UpdateDetails from "./pages/updateDetails";
@@ -24,6 +25,8 @@ function App() { // אחראי על ההעברה בין המסכים
         <Route path="/game" component={game} />
 
       </Switch>
+
+      <Fotter />
     </BrowserRouter>
   );
 }
