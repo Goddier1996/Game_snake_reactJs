@@ -13,7 +13,7 @@ const Fotter = () => {
             </div>
 
             <div className="howMade">
-                <p>made this project Artium and Shelly</p>
+                <p>made this project Artem and Shelly</p>
             </div>
         </div>
     )
