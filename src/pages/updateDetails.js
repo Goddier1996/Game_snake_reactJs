@@ -257,7 +257,7 @@ const UpdateDetails = () => {
     return (
         <>
 
-            <div class="register">
+            <div className="register">
 
                 <form className="bagroundToImage" onSubmit={signup}>
 
@@ -271,9 +271,9 @@ const UpdateDetails = () => {
                     <FormFeild input type="date" name="Date" action={setStartDate} />
                     <FormFeild input type="file" name="Profile image" targetImg={profileImg} action={uploadImage} />
 
-                    <div class="buttonsRegister">
-                        <button type="submit" class="btn btn-success" >submit</button>
-                        <button type="reset" class="btn btn-danger">reset</button>
+                    <div className="buttonsRegister">
+                        <button type="submit" className="btn btn-success" >submit</button>
+                        <button type="reset" className="btn btn-danger">reset</button>
                     </div>
                 </form>
             </div>

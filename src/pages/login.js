@@ -122,24 +122,24 @@ const Login = () => {
                 <>
                     <Modal show={show} onHide={handleClose}>
 
-                        <div class="sign-box">
+                        <div className="sign-box">
                             <h1>Sign In<p></p></h1>
 
                             <form action="#" method="get" autocomplete="off">
 
-                                <div class="input-field">
+                                <div className="input-field">
                                     <p>User Name :</p>
-                                    <input class="input" onInput={(event) => { setUserName(event.target.value) }} />
+                                    <input className="input" onInput={(event) => { setUserName(event.target.value) }} />
                                 </div>
 
-                                <div class="input-field">
+                                <div className="input-field">
                                     <p>Password :</p>
-                                    <input type="password" class="input" onInput={(event) => { setPassword(event.target.value) }} />
+                                    <input type="password" className="input" onInput={(event) => { setPassword(event.target.value) }} />
                                 </div>
 
 
-                                <div class="input-field right">
-                                    <button class="btn" onClick={signUp} >Play</button>
+                                <div className="input-field right">
+                                    <button className="btn" onClick={signUp} >Play</button>
                                 </div>
 
 
@@ -175,24 +175,24 @@ const Login = () => {
                 <>
                     <Modal show={show} onHide={handleClose}>
 
-                        <div class="sign-box">
+                        <div className="sign-box">
                             <h1>Sign In<p></p></h1>
 
                             <form action="#" method="get" autocomplete="off">
 
-                                <div class="input-field">
+                                <div className="input-field">
                                     <p>User Name :</p>
-                                    <input class="input" onInput={(event) => { setUserName(event.target.value) }} />
+                                    <input className="input" onInput={(event) => { setUserName(event.target.value) }} />
                                 </div>
 
-                                <div class="input-field">
+                                <div className="input-field">
                                     <p>Password :</p>
-                                    <input type="password" class="input" onInput={(event) => { setPassword(event.target.value) }} />
+                                    <input type="password" className="input" onInput={(event) => { setPassword(event.target.value) }} />
                                 </div>
 
 
-                                <div class="input-field right">
-                                    <button class="btn" onClick={signUp} >Play</button>
+                                <div className="input-field right">
+                                    <button className="btn" onClick={signUp} >Play</button>
                                 </div>
 
 

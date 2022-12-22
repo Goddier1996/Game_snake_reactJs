@@ -121,8 +121,8 @@ const Admin = () => {
           </thead>
 
 
-          {list.map((item) =>
-            <tbody>
+          {list.map((item,i) =>
+            <tbody key={i}>
               <tr>
                 <td style={{ textAlign: "center" }}>{countUsers++}</td>
                 <td><img src={item.profileImg}></img></td>

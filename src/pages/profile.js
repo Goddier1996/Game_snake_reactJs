@@ -56,7 +56,7 @@ const Profile = () => {
     if (userProfile == null) {
 
         return (
-            <div class="userProfile">
+            <div className="userProfile">
                 <p>You must be logged in to view this profile</p>
             </div>
         )
@@ -71,35 +71,35 @@ const Profile = () => {
 
             <div className='cardProfile'>
 
-                <div class="cardStyle">
+                <div className="cardStyle">
 
-                    <div class="col-md-4">
+                    <div className="col-md-4">
 
-                        <div class="CardUser p-3 py-4">
+                        <div className="CardUser p-3 py-4">
 
-                            <div class="text-center">
-                                <img src={userProfile.profileImg} width="100" class="rounded-circle" />
+                            <div className="text-center">
+                                <img src={userProfile.profileImg} width="100" className="rounded-circle" />
                             </div>
 
-                            <div class="text-center mt-3">
-                                <h5 class="mt-2 mb-0">Hello {userProfile.userName}</h5>
+                            <div className="text-center mt-3">
+                                <h5 className="mt-2 mb-0">Hello {userProfile.userName}</h5>
 
                                 <br />
 
-                                <div class="px-4 mt-1">
+                                <div className="px-4 mt-1">
 
-                                    <p class="fonts">Email - {userProfile.email} </p>
-                                    <p class="fonts">Birthday - {userProfile.startDate} </p>
+                                    <p className="fonts">Email - {userProfile.email} </p>
+                                    <p className="fonts">Birthday - {userProfile.startDate} </p>
 
                                 </div>
 
                                 <br />
 
-                                <div class="buttons">
+                                <div className="buttons">
 
-                                    <button class="btn btn-success px-4" onClick={ToTheGame}>Go Play</button>
-                                    <button class="btn btn-warning px-4 ms-3" onClick={UpdateDetails}>Update User</button>
-                                    <button class="btn btn-danger px-4 ms-3" onClick={clearAll}>Log Out</button>
+                                    <button className="btn btn-success px-4" onClick={ToTheGame}>Go Play</button>
+                                    <button className="btn btn-warning px-4 ms-3" onClick={UpdateDetails}>Update User</button>
+                                    <button className="btn btn-danger px-4 ms-3" onClick={clearAll}>Log Out</button>
 
                                 </div>
                             </div>

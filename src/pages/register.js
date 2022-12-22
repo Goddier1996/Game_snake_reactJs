@@ -227,7 +227,7 @@ const Register = () => {
     return (
         <>
 
-            <div class="register">
+            <div className="register">
 
                 <form className="bagroundToImage" onSubmit={signup} >
                     <h1>Create New Account : </h1>
@@ -240,9 +240,9 @@ const Register = () => {
                     <FormFeild input type="date" name="Date" action={setStartDate} />
                     <FormFeild input type="file" name="Profile image" targetImg={profileImg} action={uploadImage} />
 
-                    <div class="buttonsRegister">
-                        <button type="submit" class="btn btn-success" >submit</button>
-                        <button type="reset" class="btn btn-danger">reset</button>
+                    <div className="buttonsRegister">
+                        <button type="submit" className="btn btn-success" >submit</button>
+                        <button type="reset" className="btn btn-danger">reset</button>
                     </div>
                 </form>
 
