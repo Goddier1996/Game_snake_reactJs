@@ -230,6 +230,7 @@ const Register = () => {
             <div className="register">
 
                 <form className="bagroundToImage" onSubmit={signup} >
+                    
                     <h1>Create New Account : </h1>
 
                     <FormFeild input type="text" name="User name" action={setUserName} />
