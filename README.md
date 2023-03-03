@@ -1,6 +1,6 @@
 # Welcome to game Snake - ReactJs
  
-Link Website - https://mini-snake-game.netlify.app 
+Link Website - https://snake-game-free.on.fleek.co
   
 This Game play Only KeyBoard !
  
